@@ -21,6 +21,7 @@ Le système repose sur :
 * Suppression dynamique de fichiers.
 
 ## 3. Architecture technique
+![Architecture du projet](img.png)
 
 
 
