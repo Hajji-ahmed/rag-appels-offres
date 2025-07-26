@@ -21,10 +21,8 @@ Le système repose sur :
 * Interface utilisateur avec Streamlit.
 * Suppression dynamique de fichiers.
 
-## 3. Architecture technique
-
-
 ## 4. Structure du projet
+  <img width="219" height="537" alt="image" src="https://github.com/user-attachments/assets/a27b7dd6-3bb6-47dc-a9c9-7b7676ad3042" />
 
 
 PROJET-RAG-TECFORGE
