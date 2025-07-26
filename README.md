@@ -23,11 +23,9 @@ Le système repose sur :
 
 ## 3. Architecture technique
 
-![Architecture du projet](img.png)
 
 ## 4. Structure du projet
 
-<img width="245" height="531" alt="image" src="https://github.com/user-attachments/assets/627cb914-2719-4cea-b727-b4aaaa94177d" />
 
 PROJET-RAG-TECFORGE
 
@@ -42,7 +40,6 @@ data/
   Répertoire pour les fichiers PDF chargés par l’utilisateur
 frontend/
   streamlit_app.py     : interface web développée avec Streamlit pour interagir avec le système
-.env                   : fichier contenant les paramètres et clés (si besoin)
 config.py              : fichier de configuration global (chemins, paramètres, modèle)
 README.md              : documentation du projet (instructions, installation, utilisation)
 requirements.txt       : dépendances Python du projet
