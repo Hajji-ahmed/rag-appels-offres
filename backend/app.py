@@ -8,6 +8,18 @@ from backend.index_pdf import main as index_pdfs
 import os
 
 app = FastAPI()
+from fastapi import Request
+from fastapi.responses import JSONResponse
+import os
+
+@app.delete("/delete-pdf")
+def delete_pdf(filename: str):
+    file_path = Path("data") / filename
+    if file_path.exists():
+        os.remove(file_path)
+        return {"status": "success", "message": f"{filename} supprimé"}
+    return JSONResponse(status_code=404, content={"status": "error", "message": "Fichier introuvable"})
+
 
 app.add_middleware(
     CORSMiddleware,

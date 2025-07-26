@@ -1,3 +1,4 @@
+# frontend/streamlit_app.py
 import streamlit as st
 import requests
 from pathlib import Path
@@ -76,7 +77,7 @@ with st.expander("Importer un nouveau fichier PDF", expanded=True):
 
         st.success(f"Fichier {uploaded_file.name} prêt pour indexation")
         with open(temp_path, "rb") as f:
-            st.download_button("Télécharger ce fichier", f, file_name=uploaded_file.name)
+            st.download_button("", f, file_name=uploaded_file.name)
 
         if st.button("Indexer le PDF"):
             with st.spinner("Indexation en cours..."):
@@ -102,16 +103,22 @@ with st.expander("Fichiers PDF déjà indexés"):
             pdfs = response.json().get("pdfs", [])
             if pdfs:
                 for pdf in pdfs:
-                    with st.container():
-                        st.markdown(f"""
-                            <div class='pdf-card'>
-                                <strong>{pdf}</strong>
-                                <form action="" method="post">
-                                    <input type="hidden" name="filename" value="{pdf}">
-                                    <button onclick="window.location.reload();" style="float: right; background: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 6px;">Supprimer</button>
-                                </form>
-                            </div>
-                        """, unsafe_allow_html=True)
+                    col1, col2 = st.columns([4, 1])
+                    with col1:
+                        st.markdown(f"📄 **{pdf}**")
+                    with col2:
+                        if st.button(f"🗑️ Supprimer {pdf}", key=f"delete-{pdf}"):
+                            try:
+                                delete_response = requests.delete(f"{BACKEND_URL}/delete-pdf", params={"filename": pdf})
+                                if delete_response.status_code == 200:
+                                    st.success(f"PDF {pdf} supprimé avec succès.")
+                                    time.sleep(1)
+                                    st.rerun()
+
+                                else:
+                                    st.error(f"Erreur: {delete_response.text}")
+                            except Exception as e:
+                                st.error(f"Erreur lors de la suppression: {str(e)}")
             else:
                 st.info("Aucun PDF disponible.")
         else:
