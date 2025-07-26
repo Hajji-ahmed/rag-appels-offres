@@ -27,7 +27,6 @@ Le système repose sur :
 
 ## 4. Structure du projet
 
-```
 PROJET-RAG-TECFORGE
 backend/
 app.py : point d’entrée du backend avec FastAPI
@@ -42,14 +41,6 @@ streamlit_app.py : interface web développée avec Streamlit pour interagir avec
 .env : fichier contenant les clés d’API (notamment celle de Gemini)
 config.py : fichier de configuration global (chemins, paramètres, clés)
 README.md : documentation du projet (instructions, installation, utilisation)
-```
-
-## 5. Installation
-
-### Prérequis
-
-* Python 3.10 ou supérieur
-* pip
 
 ### Étapes d’installation
 
