@@ -1,7 +1,3 @@
----
-
-# README.md — Système RAG pour Appels d’Offres
-
 ## 1. Présentation du projet
 
 Ce projet consiste à créer un système de question-réponse intelligent basé sur des documents PDF d'appels d’offres. Il permet de téléverser un fichier PDF, de le traiter via un pipeline RAG (Retrieval-Augmented Generation), et de poser des questions en langage naturel pour obtenir des réponses précises et sourcées.
@@ -104,29 +100,4 @@ streamlit run frontend/streamlit_app.py
 | LangChain             | Pipeline de question-réponse         |
 | PyMuPDF / pdfplumber  | Extraction de texte des fichiers PDF |
 
-## 9. Sécurité
 
-* Utilisation de fichiers `.env` pour les clés API.
-* Aucune donnée personnelle stockée.
-* Suppression sécurisée des fichiers PDF.
-
-## 10. Limitations
-
-* Stockage vectoriel local uniquement (pas de base cloud).
-* Pas encore de gestion multi-utilisateur ou d'historique.
-* Non testé avec de très gros fichiers PDF.
-
-## 11. Évolutions possibles
-
-* Intégration avec Weaviate ou Pinecone.
-* Authentification et gestion des sessions.
-* Historique des questions/réponses.
-* Amélioration de l’interface (filtrage, surlignage des sources, etc.)
-
-## 12. Licence
-
-Projet réalisé dans le cadre d’un stage chez TECFORGE. Code disponible à des fins pédagogiques et expérimentales.
-
----
-
-Souhaites-tu que je le génère automatiquement dans ton projet `README.md` ?
