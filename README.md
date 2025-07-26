@@ -44,13 +44,6 @@ config.py              : fichier de configuration global (chemins, paramètres, 
 README.md              : documentation du projet (instructions, installation, utilisation)
 requirements.txt       : dépendances Python du projet
 ```
-
-Voici la **section complète “Étapes d’installation”** à intégrer telle quelle dans ton `README.md`, avec :
-
-* l'installation du projet Python,
-* l'installation de `Ollama`,
-* et le téléchargement du modèle `mistral:instruct`.
-
 ---
 
 ## 5. Étapes d’installation
