@@ -22,26 +22,25 @@ Le système repose sur :
 
 ## 3. Architecture technique
 
-```
-[Streamlit] ---> [FastAPI Backend] ---> [FAISS + Embeddings] ---> [Gemini LLM]
-                                    ↘
-                                 [PDF Loader + Chunker]
-```
+
 
 ## 4. Structure du projet
 
 ```
-projet-rag-tecforge/
-├── backend/                 # API FastAPI et logique RAG
-│   ├── app.py
-│   └── rag_pipeline.py
-├── frontend/                # Interface Streamlit
-│   └── streamlit_app.py
-├── data/                    # Fichiers PDF stockés localement
-├── .env                     # Clés et variables secrètes
-├── config.py                # Configuration globale
-├── requirements.txt         # Dépendances
-└── README.md
+PROJET-RAG-TECFORGE
+backend/
+app.py : point d’entrée du backend avec FastAPI
+faiss_index.index : index vectoriel FAISS contenant les embeddings des documents
+docs.pkl : textes segmentés et sérialisés (format pickle)
+index_pdf.py : script d’extraction et d’indexation des fichiers PDF
+rag_pipeline.py : pipeline RAG qui gère la recherche contextuelle et la génération de réponse via Gemini
+data/
+        répertoire pour les fichiers PDF chargés par l’utilisateur
+frontend/
+streamlit_app.py : interface web développée avec Streamlit pour interagir avec le système
+.env : fichier contenant les clés d’API (notamment celle de Gemini)
+config.py : fichier de configuration global (chemins, paramètres, clés)
+README.md : documentation du projet (instructions, installation, utilisation)
 ```
 
 ## 5. Installation
