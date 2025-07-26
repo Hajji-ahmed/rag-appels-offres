@@ -26,8 +26,10 @@ Le système repose sur :
 
 
 ## 4. Structure du projet
+<img width="245" height="531" alt="image" src="https://github.com/user-attachments/assets/627cb914-2719-4cea-b727-b4aaaa94177d" />
 
 PROJET-RAG-TECFORGE
+```
 backend/
 app.py : point d’entrée du backend avec FastAPI
 faiss_index.index : index vectoriel FAISS contenant les embeddings des documents
@@ -41,7 +43,7 @@ streamlit_app.py : interface web développée avec Streamlit pour interagir avec
 .env : fichier contenant les clés d’API (notamment celle de Gemini)
 config.py : fichier de configuration global (chemins, paramètres, clés)
 README.md : documentation du projet (instructions, installation, utilisation)
-
+```
 ### Étapes d’installation
 
 ```bash
