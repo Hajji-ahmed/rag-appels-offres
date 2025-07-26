@@ -43,11 +43,12 @@ streamlit_app.py : interface web développée avec Streamlit pour interagir avec
 .env : fichier contenant les clés d’API (notamment celle de Gemini)
 config.py : fichier de configuration global (chemins, paramètres, clés)
 README.md : documentation du projet (instructions, installation, utilisation)
+requirements.txt
 ```
-### Étapes d’installation
+### 5. Étapes d’installation
 
 ```bash
-git clone https://github.com/ton-compte/projet-rag-tecforge.git
+git clone https://github.com/Hajji-ahmed/rag-appels-offres.git
 cd projet-rag-tecforge
 python -m venv venv
 source venv/bin/activate  # ou venv\Scripts\activate sous Windows
