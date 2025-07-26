@@ -45,32 +45,76 @@ README.md              : documentation du projet (instructions, installation, ut
 requirements.txt       : dépendances Python du projet
 ```
 
+Voici la **section complète “Étapes d’installation”** à intégrer telle quelle dans ton `README.md`, avec :
+
+* l'installation du projet Python,
+* l'installation de `Ollama`,
+* et le téléchargement du modèle `mistral:instruct`.
+
+---
+
 ## 5. Étapes d’installation
+
+1. **Cloner le projet**
 
 ```bash
 git clone https://github.com/Hajji-ahmed/rag-appels-offres.git
 cd projet-rag-tecforge
+```
+
+2. **Créer un environnement virtuel et installer les dépendances**
+
+```bash
 python -m venv venv
-source venv/bin/activate  # ou venv\Scripts\activate sous Windows
+source venv/bin/activate   # Sous Windows : venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-Créer un fichier `.env` à la racine (si un backend local comme Ollama est utilisé) :
+3. **Créer un fichier `.env` pour configurer le modèle**
 
-```
+```env
 LLM_BACKEND_URL=http://localhost:11434
 MODEL_NAME=mistral:instruct
 ```
 
-## 6. Lancement du projet
+---
 
-### Démarrer le backend (FastAPI)
+### Installation de `mistral:instruct` avec Ollama
+
+Ce projet utilise le modèle local `mistral:instruct`, exécuté via le moteur Ollama.
+
+#### a. Installer Ollama :
+
+* Télécharger depuis : [https://ollama.com/download](https://ollama.com/download)
+* L’installer selon votre système (Windows, macOS, Linux)
+
+#### b. Lancer Ollama (automatique après installation)
+
+Vérifiez qu’Ollama tourne avec :
+
+```bash
+curl http://localhost:11434
+```
+
+#### c. Télécharger le modèle Mistral
+
+```bash
+ollama pull mistral:instruct
+```
+
+Ce modèle sera ensuite disponible pour le backend sans connexion internet.
+
+---
+
+### Démarrer le projet
+
+1. **Lancer le backend (FastAPI)**
 
 ```bash
 uvicorn backend.app:app --reload --port 8000
 ```
 
-### Démarrer le frontend (Streamlit)
+2. **Lancer l’interface (Streamlit)**
 
 ```bash
 streamlit run frontend/streamlit_app.py
