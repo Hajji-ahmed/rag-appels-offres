@@ -1,0 +1,12 @@
+[Unit]
+Description=AO RAG FastAPI Backend
+After=network.target
+
+[Service]
+User={...}
+WorkingDirectory={...}/rag-appels-offres
+ExecStart={...}/rag-appels-offres/venv/bin/gunicorn backend.app:app -c backend/gunicorn_config.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
