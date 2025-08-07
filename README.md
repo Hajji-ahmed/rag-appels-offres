@@ -66,7 +66,7 @@ GEMINI_API_KEY=your_gemini_api_key_here
 ### Démarrer le backend (FastAPI)
 
 ```bash
-uvicorn backend.app:app --reload --port 8000
+uvicorn backend.app:app --reload --port 8001
 ```
 
 ### Démarrer le frontend (Streamlit)
@@ -77,7 +77,7 @@ streamlit run frontend/streamlit_app.py
 
 ### Accès aux applications
 
-* API Backend FastAPI : http://localhost:8080
+* API Backend FastAPI : http://localhost:8001
 * Streamlit Dashboard : http://localhost:8501
 
 ## 7. Lancement du projet - gunicorn
@@ -119,6 +119,7 @@ streamlit run frontend/streamlit_app.py --server.port 8502
 | Gemini API            | Génération de réponses               |
 | LangChain             | Pipeline de question-réponse         |
 | PyMuPDF / pdfplumber  | Extraction de texte des fichiers PDF |
+
 
 
 
