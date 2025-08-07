@@ -61,7 +61,7 @@ Créer un fichier `.env` à la racine :
 GEMINI_API_KEY=your_gemini_api_key_here
 ```
 
-## 6. Lancement du projet
+## 6. Lancement local du projet
 
 ### Démarrer le backend (FastAPI)
 
@@ -75,14 +75,40 @@ uvicorn backend.app:app --reload --port 8000
 streamlit run frontend/streamlit_app.py
 ```
 
-## 7. Utilisation
+### Accès aux applications
+
+* API Backend FastAPI : http://localhost:8080
+* Streamlit Dashboard : http://localhost:8501
+
+## 7. Lancement du projet - gunicorn
+
+### Démarrer le backend (FastAPI) - [Debug]
+
+```bash
+gunicorn backend.app:app -c backend/gunicorn_config.py
+```
+
+### Démarrer le frontend (Streamlit) - [Debug]
+
+```bash
+streamlit run frontend/streamlit_app.py --server.port 8502 
+```
+
+**Remarque :** En déploiement le backend et le frontend sont gérés par **Systemd**.
+
+### Accès aux applications
+
+* API Backend FastAPI : http://localhost:8001
+* Streamlit Dashboard : http://localhost:8502
+
+## 8. Utilisation
 
 1. Téléverser un PDF via l’interface.
 2. Indexer le fichier.
 3. Poser une question sur le contenu.
 4. Obtenir une réponse générée automatiquement.
 
-## 8. Technologies utilisées
+## 9. Technologies utilisées
 
 | Technologie           | Rôle                                 |
 | --------------------- | ------------------------------------ |
@@ -93,5 +119,6 @@ streamlit run frontend/streamlit_app.py
 | Gemini API            | Génération de réponses               |
 | LangChain             | Pipeline de question-réponse         |
 | PyMuPDF / pdfplumber  | Extraction de texte des fichiers PDF |
+
 
 
