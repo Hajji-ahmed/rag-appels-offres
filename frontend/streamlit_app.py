@@ -7,7 +7,7 @@ import os
 
 # Configuration
 st.set_page_config(page_title="Système RAG - Appels d'Offres", layout="wide")
-BACKEND_URL = "http://127.0.0.1:8000"
+BACKEND_URL = "http://127.0.0.1:8001"
 DATA_DIR = Path("data")
 DATA_DIR.mkdir(exist_ok=True)
 
